@@ -112,7 +112,7 @@ namespace Formulario.Dal
 
 
 
-        public DataTable ListarTodos()
+        public DataTable ListarTodos(string _nome)
         {
             DataTable tabelaClientes = new DataTable();
 
@@ -122,17 +122,26 @@ namespace Formulario.Dal
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    string sql = "SELECT * FROM tb_clientes";
-
-                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    string sql;
+                    if (_nome.Length == 0)
                     {
-                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                     
+                        sql = $"SELECT * FROM tb_clientes where Cliente = {_nome}";
+                    }
+                    else
+                    {
+                        sql = $"SELECT * FROM tb_clientes";
+                    }
+                        using (MySqlCommand cmd = new MySqlCommand(sql, con))
                         {
-                            da.Fill(tabelaClientes);
+                            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                            {
+                                da.Fill(tabelaClientes);
+                            }
                         }
                     }
                 }
-            }
+            
             catch (Exception ex)
             {
                 Console.WriteLine("Erro inesperado: " + ex.Message);

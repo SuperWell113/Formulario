@@ -35,6 +35,7 @@
             agendamentoDeServiçosToolStripMenuItem = new ToolStripMenuItem();
             visualizarClienteToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
+            textBox1 = new TextBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -79,12 +80,20 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 27);
+            dataGridView1.Location = new Point(0, 50);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(906, 430);
+            dataGridView1.Size = new Size(906, 407);
             dataGridView1.TabIndex = 3;
             dataGridView1.Visible = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(843, 27);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(63, 27);
+            textBox1.TabIndex = 4;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Form1
             // 
@@ -93,6 +102,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(906, 459);
+            Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
@@ -118,5 +128,6 @@
         private ToolStripMenuItem TelaInicial;
         private DataGridView dataGridView1;
         private ToolStripMenuItem visualizarClienteToolStripMenuItem;
+        private TextBox textBox1;
     }
 }

@@ -51,7 +51,7 @@ namespace Formulario
             }
 
             DalClientes dal = new DalClientes();
-            DataTable data = dal.ListarTodos();
+            DataTable data = dal.ListarTodos("");
 
             dataGridView1.DataSource = data;
 
@@ -70,8 +70,13 @@ namespace Formulario
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
             DalClientes dal = new DalClientes();
-            DataTable data = dal.ListarTodos();
+            DataTable data = dal.ListarTodos(textBox1.Text);
 
             dataGridView1.DataSource = data;
         }

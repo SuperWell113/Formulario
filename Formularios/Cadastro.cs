@@ -75,5 +75,10 @@ namespace Formulario.Formularios
             Agendamento a = new Agendamento();
             a.ShowDialog();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
