@@ -1,4 +1,8 @@
+using static Formulario.Dal.DalClientes;
+using Formulario.Dal;
 using Formulario.Formularios;
+using System.Data;
+
 
 namespace Formulario
 
@@ -46,7 +50,10 @@ namespace Formulario
                 dataGridView1.Visible = false;
             }
 
+            DalClientes dal = new DalClientes();
+            DataTable data = dal.ListarTodos();
 
+            dataGridView1.DataSource = data;
 
         }
 
@@ -54,6 +61,19 @@ namespace Formulario
         {
             Form1 frm = new Form1();
             frm.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DalClientes dal = new DalClientes();
+            DataTable data = dal.ListarTodos();
+
+            dataGridView1.DataSource = data;
         }
     }
 }
