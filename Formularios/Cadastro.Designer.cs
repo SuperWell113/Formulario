@@ -36,7 +36,6 @@
             telaInicialToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeClienteToolStripMenuItem = new ToolStripMenuItem();
             agendamentoDeServiçosToolStripMenuItem = new ToolStripMenuItem();
-            visualizarInformaçõesToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -57,11 +56,8 @@
             comboBox1 = new ComboBox();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
-            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -77,7 +73,7 @@
             // menuStrip1
             // 
             menuStrip1.Font = new Font("Segoe UI", 11F);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { telaInicialToolStripMenuItem, cadastroDeClienteToolStripMenuItem, agendamentoDeServiçosToolStripMenuItem, visualizarInformaçõesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { telaInicialToolStripMenuItem, cadastroDeClienteToolStripMenuItem, agendamentoDeServiçosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -105,13 +101,6 @@
             agendamentoDeServiçosToolStripMenuItem.Size = new Size(193, 24);
             agendamentoDeServiçosToolStripMenuItem.Text = "Agendamento de serviços";
             agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click;
-            // 
-            // visualizarInformaçõesToolStripMenuItem
-            // 
-            visualizarInformaçõesToolStripMenuItem.Name = "visualizarInformaçõesToolStripMenuItem";
-            visualizarInformaçõesToolStripMenuItem.Size = new Size(170, 24);
-            visualizarInformaçõesToolStripMenuItem.Text = "Visualizar informações";
-            visualizarInformaçõesToolStripMenuItem.Click += visualizarInformaçõesToolStripMenuItem_Click;
             // 
             // label1
             // 
@@ -241,6 +230,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(363, 27);
             textBox3.TabIndex = 14;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -259,6 +249,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(165, 27);
             textBox5.TabIndex = 16;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // textBox6
             // 
@@ -277,6 +268,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(153, 27);
             textBox7.TabIndex = 18;
+            textBox7.TextChanged += textBox7_TextChanged;
             // 
             // textBox8
             // 
@@ -286,6 +278,7 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(352, 27);
             textBox8.TabIndex = 19;
+            textBox8.TextChanged += textBox8_TextChanged;
             // 
             // textBox1
             // 
@@ -312,7 +305,7 @@
             button1.BackColor = Color.Lime;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(662, 431);
+            button1.Location = new Point(902, 479);
             button1.Name = "button1";
             button1.Size = new Size(114, 42);
             button1.TabIndex = 25;
@@ -325,24 +318,13 @@
             button2.BackColor = Color.SkyBlue;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(782, 475);
+            button2.Location = new Point(782, 479);
             button2.Name = "button2";
             button2.Size = new Size(114, 42);
             button2.TabIndex = 26;
             button2.Text = "Atualizar";
             button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.DarkSeaGreen;
-            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ControlText;
-            button3.Location = new Point(782, 431);
-            button3.Name = "button3";
-            button3.Size = new Size(114, 42);
-            button3.TabIndex = 27;
-            button3.Text = "Consultar";
-            button3.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // button4
             // 
@@ -355,15 +337,7 @@
             button4.TabIndex = 28;
             button4.Text = "Deletar";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(902, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(288, 519);
-            dataGridView1.TabIndex = 29;
-            dataGridView1.Visible = false;
+            button4.Click += button4_Click;
             // 
             // Cadastro
             // 
@@ -375,9 +349,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1190, 529);
             ContextMenuStrip = contextMenuStrip2;
-            Controls.Add(dataGridView1);
             Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(comboBox1);
@@ -411,7 +383,6 @@
             Load += Cadastro_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -444,9 +415,6 @@
         private ComboBox comboBox1;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Button button4;
-        private ToolStripMenuItem visualizarInformaçõesToolStripMenuItem;
-        private DataGridView dataGridView1;
     }
 }
