@@ -59,7 +59,7 @@ namespace Formulario.Formularios
                 cliente.Datadenascimento = DateTime.ParseExact(textBox1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 cliente.Ativo = comboBox1.Text;
 
-                DalClientes dal = new DalClientes();
+                Dalservicos dal = new Dalservicos();
                 dal.Adicionar(cliente);
 
                 MessageBox.Show("Cliente cadastrado com sucesso!");
@@ -135,7 +135,7 @@ namespace Formulario.Formularios
 
                 if (r == DialogResult.Yes)
                 {
-                    DalClientes dal = new DalClientes();
+                    Dalservicos dal = new Dalservicos();
                     dal.Deletar(id);
 
                     MessageBox.Show("Cliente excluído com sucesso!");
@@ -187,7 +187,7 @@ namespace Formulario.Formularios
                 cliente.Datadenascimento = DateTime.ParseExact(textBox1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 cliente.Ativo = comboBox1.Text;
 
-                DalClientes dal = new DalClientes();
+                Dalservicos dal = new Dalservicos();
                 dal.Atualizar(cliente);
 
                 MessageBox.Show("Cliente atualizado com sucesso!");

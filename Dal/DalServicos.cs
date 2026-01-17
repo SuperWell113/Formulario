@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Formulario.Dal
 {
-    internal class DalServicos : Interface.InterfaceServicos
+    public class DalServicos : Interface.InterfaceServicos
     {
         public void Adicionar(ModelServicos servicos)
         {

@@ -1,4 +1,4 @@
-using static Formulario.Dal.DalClientes;
+using static Formulario.Dal.Dalservicos;
 using Formulario.Dal;
 using Formulario.Formularios;
 using System.Data;
@@ -50,7 +50,7 @@ namespace Formulario
                 dataGridView1.Visible = false;
             }
 
-            DalClientes dal = new DalClientes();
+            Dalservicos dal = new Dalservicos();
             DataTable data = dal.ListarTodos("");
 
             dataGridView1.DataSource = data;
@@ -75,7 +75,7 @@ namespace Formulario
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DalClientes dal = new DalClientes();
+            Dalservicos dal = new Dalservicos();
             DataTable data = dal.ListarTodos(textBox1.Text);
 
             dataGridView1.DataSource = data;

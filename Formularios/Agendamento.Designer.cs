@@ -41,14 +41,10 @@
             telaInicialToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeClientesToolStripMenuItem = new ToolStripMenuItem();
             agendamentoDeServiçosToolStripMenuItem = new ToolStripMenuItem();
-            visualizarInformaçõesToolStripMenuItem = new ToolStripMenuItem();
             dateTimePicker1 = new DateTimePicker();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
-            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -125,17 +121,18 @@
             // 
             button1.BackColor = Color.Lime;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(5, 424);
+            button1.Location = new Point(197, 424);
             button1.Name = "button1";
             button1.Size = new Size(205, 30);
             button1.TabIndex = 9;
             button1.Text = "Confirmar agendamento";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // menuStrip1
             // 
             menuStrip1.Font = new Font("Segoe UI", 11F);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { telaInicialToolStripMenuItem, cadastroDeClientesToolStripMenuItem, agendamentoDeServiçosToolStripMenuItem, visualizarInformaçõesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { telaInicialToolStripMenuItem, cadastroDeClientesToolStripMenuItem, agendamentoDeServiçosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1123, 28);
@@ -163,13 +160,6 @@
             agendamentoDeServiçosToolStripMenuItem.Text = "Agendamento de serviços";
             agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click;
             // 
-            // visualizarInformaçõesToolStripMenuItem
-            // 
-            visualizarInformaçõesToolStripMenuItem.Name = "visualizarInformaçõesToolStripMenuItem";
-            visualizarInformaçõesToolStripMenuItem.Size = new Size(170, 24);
-            visualizarInformaçõesToolStripMenuItem.Text = "Visualizar informações";
-            visualizarInformaçõesToolStripMenuItem.Click += visualizarInformaçõesToolStripMenuItem_Click;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
@@ -190,37 +180,19 @@
             button2.TabIndex = 12;
             button2.Text = "Deletar agendamento";
             button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.LightSteelBlue;
-            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(437, 424);
-            button3.Name = "button3";
-            button3.Size = new Size(196, 30);
-            button3.TabIndex = 13;
-            button3.Text = "Consultar agendamento";
-            button3.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
             button4.BackColor = Color.Blue;
             button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(227, 424);
+            button4.Location = new Point(431, 424);
             button4.Name = "button4";
             button4.Size = new Size(193, 30);
             button4.TabIndex = 14;
             button4.Text = "Atualizar agendamento";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(843, 31);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(285, 473);
-            dataGridView1.TabIndex = 15;
-            dataGridView1.Visible = false;
+            button4.Click += button4_Click;
             // 
             // Agendamento
             // 
@@ -229,9 +201,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1123, 500);
-            Controls.Add(dataGridView1);
             Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(button1);
@@ -250,7 +220,6 @@
             Load += Agendamento_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -270,10 +239,7 @@
         private ToolStripMenuItem cadastroDeClientesToolStripMenuItem;
         private ToolStripMenuItem agendamentoDeServiçosToolStripMenuItem;
         private DateTimePicker dateTimePicker1;
-        private ToolStripMenuItem visualizarInformaçõesToolStripMenuItem;
         private Button button2;
-        private Button button3;
         private Button button4;
-        private DataGridView dataGridView1;
     }
 }
