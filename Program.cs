@@ -1,3 +1,7 @@
+using Formulario.Dal;
+using System.Data;
+using System.Windows.Forms;
+
 namespace Formulario
 {
     internal static class Program
@@ -12,6 +16,10 @@ namespace Formulario
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+
+
+
         }
     }
 }

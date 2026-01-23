@@ -1,17 +1,13 @@
-﻿using Formulario.Model;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
+﻿using System.Data;
+using Formulario.Model;
 
 namespace Formulario.Interface
 {
     public interface InterfaceServicos
     {
-        void Adicionar(ModelServicos Servicos);
+        void Adicionar(ModelServicos servicos);
         void Atualizar(ModelServicos servicos);
         void Deletar(int id);
-        DataTable Listartodos();
-
+        DataTable ListarTodos();
     }
 }

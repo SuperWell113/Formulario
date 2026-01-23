@@ -86,21 +86,21 @@
             telaInicialToolStripMenuItem.Name = "telaInicialToolStripMenuItem";
             telaInicialToolStripMenuItem.Size = new Size(91, 24);
             telaInicialToolStripMenuItem.Text = "Tela inicial";
-            telaInicialToolStripMenuItem.Click += telaInicialToolStripMenuItem_Click;
+            telaInicialToolStripMenuItem.Click += telaInicialToolStripMenuItem_Click_1;
             // 
             // cadastroDeClienteToolStripMenuItem
             // 
             cadastroDeClienteToolStripMenuItem.Name = "cadastroDeClienteToolStripMenuItem";
             cadastroDeClienteToolStripMenuItem.Size = new Size(149, 24);
             cadastroDeClienteToolStripMenuItem.Text = "Cadastro de cliente";
-            cadastroDeClienteToolStripMenuItem.Click += cadastroDeClienteToolStripMenuItem_Click;
+            cadastroDeClienteToolStripMenuItem.Click += cadastroDeClienteToolStripMenuItem_Click_1;
             // 
             // agendamentoDeServiçosToolStripMenuItem
             // 
             agendamentoDeServiçosToolStripMenuItem.Name = "agendamentoDeServiçosToolStripMenuItem";
             agendamentoDeServiçosToolStripMenuItem.Size = new Size(193, 24);
             agendamentoDeServiçosToolStripMenuItem.Text = "Agendamento de serviços";
-            agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click;
+            agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click_1;
             // 
             // label1
             // 
@@ -150,7 +150,6 @@
             label4.Size = new Size(55, 20);
             label4.TabIndex = 6;
             label4.Text = "Cliente";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -230,7 +229,6 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(363, 27);
             textBox3.TabIndex = 14;
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -249,7 +247,6 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(165, 27);
             textBox5.TabIndex = 16;
-            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // textBox6
             // 
@@ -268,7 +265,6 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(153, 27);
             textBox7.TabIndex = 18;
-            textBox7.TextChanged += textBox7_TextChanged;
             // 
             // textBox8
             // 
@@ -278,7 +274,6 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(352, 27);
             textBox8.TabIndex = 19;
-            textBox8.TextChanged += textBox8_TextChanged;
             // 
             // textBox1
             // 
@@ -311,7 +306,7 @@
             button1.TabIndex = 25;
             button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += button1_Click_1;
             // 
             // button2
             // 
@@ -324,7 +319,7 @@
             button2.TabIndex = 26;
             button2.Text = "Atualizar";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
+            button2.Click += button2_Click_2;
             // 
             // button4
             // 
@@ -337,7 +332,7 @@
             button4.TabIndex = 28;
             button4.Text = "Deletar";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button4.Click += button4_Click_1;
             // 
             // Cadastro
             // 

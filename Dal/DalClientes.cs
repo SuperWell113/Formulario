@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Formulario.Dal
 {
-    public class Dalservicos : InterfaceClientes
+    public class DalClientes : InterfaceClientes
     {
         private MySqlConnection conexao;
 

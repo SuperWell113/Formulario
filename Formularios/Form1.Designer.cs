@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             TelaInicial = new ToolStripMenuItem();
             cadastroDeClientes = new ToolStripMenuItem();
             agendamentoDeServiçosToolStripMenuItem = new ToolStripMenuItem();
             visualizarClienteToolStripMenuItem = new ToolStripMenuItem();
+            balançoDeServiçosToolStripMenuItem = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
+            dalservicosBindingSource = new BindingSource(components);
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dalservicosBindingSource).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { TelaInicial, cadastroDeClientes, agendamentoDeServiçosToolStripMenuItem, visualizarClienteToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { TelaInicial, cadastroDeClientes, agendamentoDeServiçosToolStripMenuItem, visualizarClienteToolStripMenuItem, balançoDeServiçosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(906, 24);
+            menuStrip1.Size = new Size(982, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -53,38 +59,59 @@
             TelaInicial.Name = "TelaInicial";
             TelaInicial.Size = new Size(74, 20);
             TelaInicial.Text = "Tela inicial";
-            TelaInicial.Click += telaInicialToolStripMenuItem_Click;
+            TelaInicial.Click += TelaInicial_Click;
             // 
             // cadastroDeClientes
             // 
             cadastroDeClientes.Name = "cadastroDeClientes";
             cadastroDeClientes.Size = new Size(125, 20);
             cadastroDeClientes.Text = "Cadastro de clientes";
-            cadastroDeClientes.Click += cadastroDeClientesT;
+            cadastroDeClientes.Click += cadastroDeClientes_Click;
             // 
             // agendamentoDeServiçosToolStripMenuItem
             // 
             agendamentoDeServiçosToolStripMenuItem.Name = "agendamentoDeServiçosToolStripMenuItem";
             agendamentoDeServiçosToolStripMenuItem.Size = new Size(156, 20);
             agendamentoDeServiçosToolStripMenuItem.Text = "Agendamento de serviços";
-            agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click;
+            agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click_1;
             // 
             // visualizarClienteToolStripMenuItem
             // 
             visualizarClienteToolStripMenuItem.Name = "visualizarClienteToolStripMenuItem";
             visualizarClienteToolStripMenuItem.Size = new Size(106, 20);
             visualizarClienteToolStripMenuItem.Text = "Visualizar cliente";
-            visualizarClienteToolStripMenuItem.Click += visualizarClienteToolStripMenuItem_Click;
+            visualizarClienteToolStripMenuItem.Click += visualizarClienteToolStripMenuItem_Click_1;
+            // 
+            // balançoDeServiçosToolStripMenuItem
+            // 
+            balançoDeServiçosToolStripMenuItem.Name = "balançoDeServiçosToolStripMenuItem";
+            balançoDeServiçosToolStripMenuItem.Size = new Size(122, 20);
+            balançoDeServiçosToolStripMenuItem.Text = "Balanço de serviços";
+            balançoDeServiçosToolStripMenuItem.Click += balançoDeServiçosToolStripMenuItem_Click_1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 50);
+            dataGridView1.Location = new Point(0, 27);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(906, 407);
+            dataGridView1.Size = new Size(688, 467);
             dataGridView1.TabIndex = 3;
             dataGridView1.Visible = false;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.DataSource = dalservicosBindingSource;
+            dataGridView2.Location = new Point(687, 27);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(295, 467);
+            dataGridView2.TabIndex = 4;
+            dataGridView2.Visible = false;
+            // 
+            // dalservicosBindingSource
+            // 
+            dalservicosBindingSource.DataSource = typeof(Dal.DalClientes);
             // 
             // Form1
             // 
@@ -92,7 +119,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(906, 459);
+            ClientSize = new Size(982, 492);
+            Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
@@ -106,6 +134,8 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dalservicosBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,5 +148,8 @@
         private ToolStripMenuItem TelaInicial;
         private DataGridView dataGridView1;
         private ToolStripMenuItem visualizarClienteToolStripMenuItem;
+        private ToolStripMenuItem balançoDeServiçosToolStripMenuItem;
+        private DataGridView dataGridView2;
+        private BindingSource dalservicosBindingSource;
     }
 }

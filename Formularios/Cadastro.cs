@@ -48,7 +48,6 @@ namespace Formulario.Formularios
         {
             try
             {
-
                 ModelClientes cliente = new ModelClientes();
 
                 cliente.Cliente = textBox3.Text;
@@ -60,7 +59,7 @@ namespace Formulario.Formularios
                 cliente.Datadenascimento = DateTime.ParseExact(textBox1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 cliente.Ativo = comboBox1.Text;
 
-                Dalservicos dal = new Dalservicos();
+                DalClientes dal = new DalClientes();
                 dal.Adicionar(cliente);
 
                 MessageBox.Show("Cliente cadastrado com sucesso!");
@@ -70,7 +69,6 @@ namespace Formulario.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
-
 
         private void telaInicialToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -136,7 +134,7 @@ namespace Formulario.Formularios
 
                 if (r == DialogResult.Yes)
                 {
-                    Dalservicos dal = new Dalservicos();
+                    DalClientes dal = new DalClientes();
                     dal.Deletar(id);
 
                     MessageBox.Show("Cliente excluído com sucesso!");
@@ -167,7 +165,7 @@ namespace Formulario.Formularios
 
                 DateTime data;
                 if (!DateTime.TryParseExact(
-                  textBox1.Text,
+                    textBox1.Text,
                     "dd/MM/yyyy",
                     CultureInfo.InvariantCulture,
                     DateTimeStyles.None,
@@ -188,7 +186,7 @@ namespace Formulario.Formularios
                 cliente.Datadenascimento = DateTime.ParseExact(textBox1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 cliente.Ativo = comboBox1.Text;
 
-                Dalservicos dal = new Dalservicos();
+                DalClientes dal = new DalClientes();
                 dal.Atualizar(cliente);
 
                 MessageBox.Show("Cliente atualizado com sucesso!");
@@ -199,7 +197,127 @@ namespace Formulario.Formularios
             }
         }
 
+        private void telaInicialToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ModelClientes cliente = new ModelClientes();
+
+                cliente.Cliente = textBox3.Text;
+                cliente.CPF = textBox7.Text;
+                cliente.Contato = textBox5.Text;
+                cliente.Email = textBox8.Text;
+                cliente.CEP = textBox6.Text;
+                cliente.Endereco = textBox4.Text;
+                cliente.Datadenascimento = DateTime.ParseExact(textBox1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                cliente.Ativo = comboBox1.Text;
+
+                DalClientes dal = new DalClientes();
+                dal.Adicionar(cliente);
+
+                MessageBox.Show("Cliente cadastrado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cadastroDeClienteToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Cadastro c = new Cadastro();
+            c.ShowDialog();
+        }
+
+        private void agendamentoDeServiçosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Agendamento a = new Agendamento();
+            a.ShowDialog();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int id;
+
+                if (!int.TryParse(textBox2.Text, out id))
+                {
+                    MessageBox.Show("ID inválido!");
+                    return;
+                }
+
+                DialogResult r = MessageBox.Show(
+                    "Deseja realmente excluir este cliente?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (r == DialogResult.Yes)
+                {
+                    DalClientes dal = new DalClientes();
+                    dal.Deletar(id);
+
+                    MessageBox.Show("Cliente excluído com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir: " + ex.Message);
+            }
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                int id;
+
+                if (!int.TryParse(textBox2.Text, out id))
+                {
+                    MessageBox.Show("ID inválido!");
+                    return;
+                }
+
+                DateTime data;
+                if (!DateTime.TryParseExact(
+                    textBox1.Text,
+                    "dd/MM/yyyy",
+                    CultureInfo.InvariantCulture,
+                    DateTimeStyles.None,
+                    out data))
+                {
+                    MessageBox.Show("Data inválida (dd/MM/yyyy)");
+                    return;
+                }
+
+                ModelClientes cliente = new ModelClientes();
+                cliente.Id = id;
+                cliente.Cliente = textBox3.Text;
+                cliente.CPF = textBox7.Text;
+                cliente.Contato = textBox5.Text;
+                cliente.Email = textBox8.Text;
+                cliente.CEP = textBox6.Text;
+                cliente.Endereco = textBox4.Text;
+                cliente.Datadenascimento = DateTime.ParseExact(textBox1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                cliente.Ativo = comboBox1.Text;
+
+                DalClientes dal = new DalClientes();
+                dal.Atualizar(cliente);
+
+                MessageBox.Show("Cliente atualizado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
     }
 }
-
-

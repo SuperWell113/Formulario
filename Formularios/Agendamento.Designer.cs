@@ -46,6 +46,8 @@
             button4 = new Button();
             button3 = new Button();
             dataGridView1 = new DataGridView();
+            textBox3 = new TextBox();
+            label5 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -60,7 +62,6 @@
             label1.Size = new Size(55, 20);
             label1.TabIndex = 0;
             label1.Text = "Cliente";
-            label1.Click += label1_Click;
             // 
             // label3
             // 
@@ -72,7 +73,6 @@
             label3.Size = new Size(46, 20);
             label3.TabIndex = 2;
             label3.Text = "Preço";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -111,7 +111,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(41, 23);
             textBox1.TabIndex = 7;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -130,7 +129,7 @@
             button1.TabIndex = 9;
             button1.Text = "Confirmar agendamento";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += button1_Click_1;
             // 
             // menuStrip1
             // 
@@ -147,21 +146,21 @@
             telaInicialToolStripMenuItem.Name = "telaInicialToolStripMenuItem";
             telaInicialToolStripMenuItem.Size = new Size(91, 24);
             telaInicialToolStripMenuItem.Text = "Tela inicial";
-            telaInicialToolStripMenuItem.Click += telaInicialToolStripMenuItem_Click;
+            telaInicialToolStripMenuItem.Click += telaInicialToolStripMenuItem_Click_1;
             // 
             // cadastroDeClientesToolStripMenuItem
             // 
             cadastroDeClientesToolStripMenuItem.Name = "cadastroDeClientesToolStripMenuItem";
             cadastroDeClientesToolStripMenuItem.Size = new Size(155, 24);
             cadastroDeClientesToolStripMenuItem.Text = "Cadastro de clientes";
-            cadastroDeClientesToolStripMenuItem.Click += cadastroDeClientesToolStripMenuItem_Click;
+            cadastroDeClientesToolStripMenuItem.Click += cadastroDeClientesToolStripMenuItem_Click_1;
             // 
             // agendamentoDeServiçosToolStripMenuItem
             // 
             agendamentoDeServiçosToolStripMenuItem.Name = "agendamentoDeServiçosToolStripMenuItem";
             agendamentoDeServiçosToolStripMenuItem.Size = new Size(193, 24);
             agendamentoDeServiçosToolStripMenuItem.Text = "Agendamento de serviços";
-            agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click;
+            agendamentoDeServiçosToolStripMenuItem.Click += agendamentoDeServiçosToolStripMenuItem_Click_1;
             // 
             // dateTimePicker1
             // 
@@ -172,7 +171,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(168, 27);
             dateTimePicker1.TabIndex = 11;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged_1;
             // 
             // button2
             // 
@@ -184,7 +183,7 @@
             button2.TabIndex = 12;
             button2.Text = "Deletar agendamento";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
             // button4
             // 
@@ -196,7 +195,7 @@
             button4.TabIndex = 14;
             button4.Text = "Atualizar agendamento";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button4.Click += button4_Click_1;
             // 
             // button3
             // 
@@ -208,7 +207,7 @@
             button3.TabIndex = 15;
             button3.Text = "Consultar agendamento";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += button3_Click_1;
             // 
             // dataGridView1
             // 
@@ -219,6 +218,25 @@
             dataGridView1.TabIndex = 16;
             dataGridView1.Visible = false;
             // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(181, 129);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(41, 23);
+            textBox3.TabIndex = 18;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 11F);
+            label5.Location = new Point(34, 132);
+            label5.Name = "label5";
+            label5.Size = new Size(141, 20);
+            label5.TabIndex = 17;
+            label5.Text = "Id do agendamento";
+            label5.Click += label5_Click;
+            // 
             // Agendamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -226,6 +244,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1123, 500);
+            Controls.Add(textBox3);
+            Controls.Add(label5);
             Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(button4);
@@ -271,5 +291,7 @@
         private Button button4;
         private Button button3;
         private DataGridView dataGridView1;
+        private TextBox textBox3;
+        private Label label5;
     }
 }
