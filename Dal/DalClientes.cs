@@ -23,10 +23,10 @@ namespace Formulario.Dal
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    string sql = @"INSERT INTO tb_clientes 
-                           (Cliente, CPF, Contato, Email, CEP, Endereco, DataNascimento, Ativo)
-                           VALUES 
-                           (@Cliente, @CPF, @Contato, @Email, @CEP, @Endereco, @DataNascimento, @Ativo)";
+                    string sql = @"INSERT INTO tb_clientes
+            (Cliente, CPF, Contato, Email, CEP, Endereco, DataNascimento, Ativo)
+            VALUES
+            (@Cliente, @CPF, @Contato, @Email, @CEP, @Endereco, @DataNascimento, @Ativo)";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
@@ -46,9 +46,10 @@ namespace Formulario.Dal
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro inesperado: " + ex.Message);
+                MessageBox.Show("Erro ao cadastrar cliente:\n" + ex.Message);
             }
         }
+
 
         public void Atualizar(ModelClientes cliente)
         {
@@ -122,26 +123,17 @@ namespace Formulario.Dal
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                    string sql;
-                    if (_nome.Length == 0)
+                    string sql = "SELECT * FROM tb_clientes";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                     
-                        sql = $"SELECT * FROM tb_clientes where Cliente = {_nome}";
-                    }
-                    else
-                    {
-                        sql = $"SELECT * FROM tb_clientes";
-                    }
-                        using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
                         {
-                            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
-                            {
-                                da.Fill(tabelaClientes);
-                            }
+                            da.Fill(tabelaClientes);
                         }
                     }
                 }
-            
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Erro inesperado: " + ex.Message);

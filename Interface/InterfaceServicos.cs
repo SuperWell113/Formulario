@@ -11,7 +11,7 @@ namespace Formulario.Interface
         void Adicionar(ModelServicos Servicos);
         void Atualizar(ModelServicos servicos);
         void Deletar(int id);
-        DataTable ListarTodos();
+        DataTable Listartodos();
 
     }
 }

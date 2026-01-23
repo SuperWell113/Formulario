@@ -48,6 +48,7 @@ namespace Formulario.Formularios
         {
             try
             {
+
                 ModelClientes cliente = new ModelClientes();
 
                 cliente.Cliente = textBox3.Text;

@@ -75,10 +75,7 @@ namespace Formulario
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Dalservicos dal = new Dalservicos();
-            DataTable data = dal.ListarTodos(textBox1.Text);
 
-            dataGridView1.DataSource = data;
         }
     }
 }

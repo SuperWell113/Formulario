@@ -44,7 +44,10 @@
             dateTimePicker1 = new DateTimePicker();
             button2 = new Button();
             button4 = new Button();
+            button3 = new Button();
+            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,7 +124,7 @@
             // 
             button1.BackColor = Color.Lime;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(197, 424);
+            button1.Location = new Point(116, 434);
             button1.Name = "button1";
             button1.Size = new Size(205, 30);
             button1.TabIndex = 9;
@@ -169,12 +172,13 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(168, 27);
             dateTimePicker1.TabIndex = 11;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // button2
             // 
             button2.BackColor = Color.Red;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(653, 424);
+            button2.Location = new Point(572, 434);
             button2.Name = "button2";
             button2.Size = new Size(184, 30);
             button2.TabIndex = 12;
@@ -186,13 +190,34 @@
             // 
             button4.BackColor = Color.Blue;
             button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(431, 424);
+            button4.Location = new Point(350, 434);
             button4.Name = "button4";
             button4.Size = new Size(193, 30);
             button4.TabIndex = 14;
             button4.Text = "Atualizar agendamento";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.DarkSeaGreen;
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(784, 434);
+            button3.Name = "button3";
+            button3.Size = new Size(205, 30);
+            button3.TabIndex = 15;
+            button3.Text = "Consultar agendamento";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(698, 31);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(425, 387);
+            dataGridView1.TabIndex = 16;
+            dataGridView1.Visible = false;
             // 
             // Agendamento
             // 
@@ -201,6 +226,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1123, 500);
+            Controls.Add(dataGridView1);
+            Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(dateTimePicker1);
@@ -220,6 +247,7 @@
             Load += Agendamento_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,5 +269,7 @@
         private DateTimePicker dateTimePicker1;
         private Button button2;
         private Button button4;
+        private Button button3;
+        private DataGridView dataGridView1;
     }
 }

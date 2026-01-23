@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Formulario.Formularios
@@ -71,19 +72,19 @@ namespace Formulario.Formularios
         {
             try
             {
-                ModelServicos servicos = new ModelServicos();
-                servicos.Servico = comboBox1.Text;
-                servicos.Preco = int.Parse(textBox2.Text);
-
                 MoldelAgendamento agd = new MoldelAgendamento();
                 agd.Id_cliente = int.Parse(textBox1.Text);
                 agd.Dia_Horario = dateTimePicker1.Value;
 
-                DalServicos dal = new DalServicos();
-                dal.Adicionar(servicos);
-
                 DalAgendamento dalAgd = new DalAgendamento();
                 dalAgd.Adicionar(agd);
+
+                ModelServicos servicos = new ModelServicos();
+                servicos.Servico = comboBox1.Text;
+                servicos.Preco = int.Parse(textBox2.Text);
+
+                DalServicos dalServ = new DalServicos();
+                dalServ.Adicionar(servicos);
 
                 MessageBox.Show("Agendamento e serviço cadastrados com sucesso!");
             }
@@ -92,6 +93,7 @@ namespace Formulario.Formularios
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -116,6 +118,45 @@ namespace Formulario.Formularios
             dal.Atualizar(servicos);
 
             MessageBox.Show("Serviço atualizado com sucesso!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Visible == false)
+            {
+
+                dataGridView1.Visible = true;
+            }
+            else
+            {
+                dataGridView1.Visible = false;
+            }
+
+            DalAgendamento dal = new DalAgendamento();
+            DataTable data = dal.ListarTodos();
+
+            dataGridView1.DataSource = data;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
+            dateTimePicker1.ShowUpDown = true;
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+          
+
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
         }
     }
 }
